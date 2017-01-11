@@ -237,7 +237,50 @@ function largestNumber(array){
 
 console.log(largestNumber([5, 10, 15, 20]));
 
-/*Write a function that takes an array, and returns a filtered array. The filtered array should only contain the truthy values from the initial array. Hint: there is an array method called filter that can help you with this :)
-Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.
-Write a function that takes two arrays, and returns an array of all elements that are only in one array. For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5]. Test your function on different inputs. Hint: you should look up array methods indexOf and slice.
-Mini Challenge: write a function that takes an array and a function as arguments. The function should return a new array that maps every element of the input array by passing it through the function you received. You are not allowed to use Array.map for this challenge, otherwise it would be too easy :)*/
+/*Write a function that takes an array, and returns a filtered array. 
+The filtered array should only contain the truthy values from the initial array.
+Hint: there is an array method called filter that can help you with this :)*/
+
+function filteredArray(arr){
+    return arr.filter(function(element){return element});
+}
+
+
+console.log(filteredArray([true, 233, "Randy", false, 0]));
+
+
+/*Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.*/
+
+function sumArr(arr) {
+    var total=0;
+    for (var i=0; i<arr.length; i++){
+         total += arr[i];
+    }
+    return total;
+}
+
+console.log(sumArr([2, 4, 6, 8]));
+console.log(sumArr([1, 1, 1, 1]));
+
+/*Write a function that takes two arrays, and returns an array of all elements that are only in one array.
+For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5]. 
+Test your function on different inputs. Hint: you should look up array methods indexOf and slice.*/
+
+function oneArr(arr1, arr2) {
+  //var arr = Array.prototype.push.apply(arr1, arr2);
+   //arr.indexOf().slice(1)
+    //console.log(arr);
+    var finalArr=[];
+    for(var i= 0; i<arr1.length; i++) {
+        for (var j=0; j<arr2.length; j++) {
+            if(arr1[i] === arr2[j]) {
+                finalArr.push(arr1[i]);
+            } 
+        }
+    }
+}
+var 
+console.log(oneArr([1,2,3], [1,2,4,5]));
+
+
+/*Mini Challenge: write a function that takes an array and a function as arguments. The function should return a new array that maps every element of the input array by passing it through the function you received. You are not allowed to use Array.map for this challenge, otherwise it would be too easy :)*/

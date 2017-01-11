@@ -267,19 +267,28 @@ For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5].
 Test your function on different inputs. Hint: you should look up array methods indexOf and slice.*/
 
 function oneArr(arr1, arr2) {
-  //var arr = Array.prototype.push.apply(arr1, arr2);
-   //arr.indexOf().slice(1)
-    //console.log(arr);
-    var finalArr=[];
-    for(var i= 0; i<arr1.length; i++) {
-        for (var j=0; j<arr2.length; j++) {
-            if(arr1[i] === arr2[j]) {
-                finalArr.push(arr1[i]);
-            } 
-        }
+    if (arr1>arr2) {
+        var arrayLong = arr1;
+        var arrayShort = arr2;
     }
+    else { 
+        var arrayLong = arr2;
+        var arrayShort = arr1;
+    }
+    var tempArray=[];
+    for(var i= 0; i<arrayLong.length; i++) {
+        var position = arrayShort.indexOf(arrayLong[i]);
+        console.log("position",position);
+        var newShortArray = arrayShort.slice(position);
+         if(position == -1) {
+             tempArray.push(arrayLong[i]);
+         }
+    }
+    
+      var finalArray = tempArray.concat(newShortArray);
+      return finalArray;
 }
-var 
+
 console.log(oneArr([1,2,3], [1,2,4,5]));
 
 

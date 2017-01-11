@@ -285,11 +285,23 @@ function oneArr(arr1, arr2) {
          }
     }
     
-      var finalArray = tempArray.concat(newShortArray);
-      return finalArray;
+     return tempArray.concat(newShortArray);
 }
 
 console.log(oneArr([1,2,3], [1,2,4,5]));
 
 
-/*Mini Challenge: write a function that takes an array and a function as arguments. The function should return a new array that maps every element of the input array by passing it through the function you received. You are not allowed to use Array.map for this challenge, otherwise it would be too easy :)*/
+/*Mini Challenge: write a function that takes an array and a function as arguments.
+The function should return a new array that maps every element of the input array
+by passing it through the function you received. 
+You are not allowed to use Array.map for this challenge, otherwise it would be too easy :)*/
+
+function newArray(arr, fn) {
+    for (var i=0; i< arr.length; i++) {
+        arr[i] = fn(arr[i]); 
+    }
+    return arr;
+}
+
+console.log(newArray([1, 2, 3, 4], function(i) {
+    (console.log("I'm number: " + i))}));
